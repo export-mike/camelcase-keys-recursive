@@ -1,0 +1,24 @@
+{
+  "name": "camelcase-keys-recursive",
+  "version": "0.0.1",
+  "description": "Adaptation of camelcase-keys but recursive. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "camelcase",
+    "keys",
+    "object",
+    "recursive",
+    "camelcase-keys",
+    "snake-case"
+  ],
+  "author": "mike james",
+  "license": "ISC",
+  "dependencies": {
+    "camelcase": "^1.0.2",
+    "isarray": "0.0.1",
+    "map-obj": "^1.0.0"
+  }
+}
