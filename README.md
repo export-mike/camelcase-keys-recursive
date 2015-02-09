@@ -21,4 +21,4 @@
 	JSON.stringify(anotherCamelWithTheHump));
 
 ### More information on internal modules
-Please refer to (camelcase)[https://www.npmjs.com/package/camelcase], (map-obj)[https://www.npmjs.com/package/map-obj] and (isarray)[https://www.npmjs.com/package/isarray] npm modules
+Please refer to [camelcase](https://www.npmjs.com/package/camelcase) , [map-obj](https://www.npmjs.com/package/map-obj) and [isarray](https://www.npmjs.com/package/isarray) npm modules
