@@ -19,6 +19,7 @@
   "dependencies": {
     "camelcase": "^1.0.2",
     "isarray": "0.0.1",
+    "lodash": "^3.1.0",
     "map-obj": "^1.0.0"
   }
 }
