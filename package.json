@@ -4,7 +4,7 @@
   "description": "Adaptation of camelcase-keys but recursive. ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "camelcase",
@@ -14,12 +14,20 @@
     "camelcase-keys",
     "snake-case"
   ],
-  "author": "mike james",
-  "license": "ISC",
+  "author": {
+    "name": "Mike James",
+    "email": "m@mikejam.es",
+    "url": "http://mikejam.es"
+  },
+  "license": "MIT",
   "dependencies": {
     "camelcase": "^1.0.2",
     "isarray": "0.0.1",
     "lodash": "^3.1.0",
     "map-obj": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "pre-commit": "^1.0.6"
   }
 }

@@ -1,3 +1,5 @@
+'use strict';
+
 var mapObj = require('map-obj');
 var camelCase = require('camelcase');
 var _ = require('lodash');
@@ -31,15 +33,3 @@ function camelCaseRecursive(obj) {
 }
 
 module.exports = camelCaseRecursive;
-
-
-	var anotherCamelWithTheHump = camelCaseRecursive({
-		'test-1': 123,
-		'test-Two': [{
-			'test-three': {
-				'test-FOUR': [{'test-five':[{'test-six':{'test-seven':[1,4,[1,2,'3','four', 'five-one']]}}]}]
-			}
-		}]
-	});
-
-	console.log(JSON.stringify(anotherCamelWithTheHump));

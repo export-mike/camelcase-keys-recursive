@@ -1,0 +1,22 @@
+{
+  "node": true,
+
+  "curly": true,
+  "latedef": true,
+  "quotmark": true,
+  "undef": true,
+  "unused": true,
+  "trailing": true,
+  "globals": {
+    "describe": false,
+    "xdescribe": false,
+    "ddescribe": false,
+    "it": false,
+    "xit": false,
+    "iit": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "pending": false,
+    "spyOn": false
+    }
+}
