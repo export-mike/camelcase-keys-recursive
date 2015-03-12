@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/camelcase-keys-recursive.svg)](http://badge.fury.io/js/camelcase-keys-recursive)
+
+[![Build Status](https://travis-ci.org/mikeljames/camelcase-keys-recursive.svg)](https://travis-ci.org/mikeljames/camelcase-keys-recursive)
 
 ### Simple usage: 
 

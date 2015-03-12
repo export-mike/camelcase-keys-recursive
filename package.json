@@ -1,6 +1,6 @@
 {
   "name": "camelcase-keys-recursive",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Adaptation of camelcase-keys but recursive. ",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "keywords": [
     "camelcase",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "chai": "^2.1.1",
+    "mocha": "^2.2.1",
     "pre-commit": "^1.0.6"
   }
 }
