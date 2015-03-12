@@ -1,7 +1,11 @@
 {
   "name": "camelcase-keys-recursive",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Adaptation of camelcase-keys but recursive. ",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikeljames/camelcase-keys-recursive.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha"
