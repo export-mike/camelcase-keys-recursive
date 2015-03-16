@@ -20,8 +20,8 @@
 		}]
 	});
 
-	//{"test1":123,"testTwo":[{"testThree":{"testFour":[{"testFive":[{"testSix":{"testSeven":8}}]}]}}]}console.log(
+	//{"test1":123,"testTwo":[{"testThree":{"testFOUR":[{"testFive":[{"testSix":{"testSeven":8}}]}]}}]}console.log(
 	JSON.stringify(anotherCamelWithTheHump));
 
 ### More information on internal modules
-Please refer to [camelcase](https://www.npmjs.com/package/camelcase) , [map-obj](https://www.npmjs.com/package/map-obj) and [isarray](https://www.npmjs.com/package/isarray) npm modules
+[map-obj](https://www.npmjs.com/package/map-obj)
