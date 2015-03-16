@@ -27,7 +27,7 @@ describe('Nested keys within arrays and objects are camelCased', function() {
 			test1: 123,
 			testTwo: [{
 				testThree: {
-					testFour: [{
+					testFOUR: [{
 						testFive: [{
 							testSix: {
 								testSeven: [1, 4, [1, 2, '3', 'four', 'five-one']]

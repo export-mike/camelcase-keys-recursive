@@ -1,6 +1,6 @@
 {
   "name": "camelcase-keys-recursive",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Adaptation of camelcase-keys but recursive. ",
   "repository": {
     "type": "git",
@@ -25,9 +25,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "camelcase": "^1.0.2",
-    "isarray": "0.0.1",
-    "lodash": "^3.1.0",
     "map-obj": "^1.0.0"
   },
   "devDependencies": {
