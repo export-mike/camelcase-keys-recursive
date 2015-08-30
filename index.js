@@ -20,7 +20,10 @@ function camelCaseRecursive(obj) {
 
 			return [internals.camelCase(key), newArray];
 
-		} else if (internals.isObject(val)) {
+		}else if(!val){
+			return [internals.camelCase(key), val];
+		} 
+		else if (internals.isObject(val)) {
 
 			return [internals.camelCase(key), camelCaseRecursive(val)];
 
