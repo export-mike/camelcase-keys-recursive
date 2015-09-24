@@ -1,6 +1,6 @@
 {
   "name": "camelcase-keys-recursive",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Adaptation of camelcase-keys but recursive. ",
   "repository": {
     "type": "git",
