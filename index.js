@@ -31,7 +31,9 @@ function camelCaseRecursive(obj) {
 
 		}else if(!val){
 			return [camelCase(key), val];
-		} else if (isObject(val) && !val instanceof Date) {
+		}else if(val instanceof Date){
+			return [camelCase(key), val];
+		} else if (isObject(val)) {
 			return [camelCase(key), camelCaseRecursive(val)];
 		} else {
 			return [camelCase(key), val];
