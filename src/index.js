@@ -4,13 +4,8 @@ const isObject = (v) => typeof(v) === 'object';
 
 const camelCase = (str) => str.replace(/[_.-](\w|$)/g, (_, x) => x.toUpperCase());
 
-const bob = {
-  name: 'bob'
-};
-
-bob.name = 'tim';
-
 function camelCaseRecursive(obj) {
+
   return mapObj(obj, (key, val) => {
     const newArray = [];
 
