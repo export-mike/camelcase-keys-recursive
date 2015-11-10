@@ -30,7 +30,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "eslint-config-pebblecode": "file:../../pebblecode-styleguide/packages/eslint-config-pebblecode",
     "map-obj": "^1.0.0"
   },
   "devDependencies": {
