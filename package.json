@@ -6,9 +6,14 @@
     "type": "git",
     "url": "git://github.com/mikeljames/camelcase-keys-recursive.git"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "compile": "babel --source-maps --out-dir lib/ src/",
+    "lint": "eslint --ext .js --ext .jsx ./ && echo No linting errors.",
+    "test": "node_modules/.bin/mocha test/ --recursive --compilers js:babel/register",
+    "test:watch": "npm run test -- --watch",
+    "coverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel/register --colors --reporter dot test/",
+    "prepublish": "npm run compile"
   },
   "keywords": [
     "camelcase",
@@ -28,7 +33,13 @@
     "map-obj": "^1.0.0"
   },
   "devDependencies": {
+    "babel": "^5.x.x",
+    "babel-eslint": "^4.1.5",
     "chai": "^2.1.1",
+    "eslint": "^1.9.0",
+    "eslint-config-airbnb": "^1.0.0",
+    "eslint-plugin-react": "^3.8.0",
+    "istanbul": "^0.4.0",
     "mocha": "^2.2.1",
     "pre-commit": "^1.0.6"
   }

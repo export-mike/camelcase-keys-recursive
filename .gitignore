@@ -26,3 +26,9 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+fixtures/
+coverage/
+*.tpm
+.idea/
+lib/
