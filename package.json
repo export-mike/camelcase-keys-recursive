@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git://github.com/mikeljames/camelcase-keys-recursive.git"
   },
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "compile": "babel --source-maps --out-dir lib/ src/",
     "lint": "eslint --ext .js --ext .jsx ./ && echo No linting errors.",
