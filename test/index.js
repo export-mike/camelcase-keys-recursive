@@ -139,3 +139,33 @@ describe('Nested keys within arrays and objects are camelCased', () => {
   });
 
 });
+
+describe('Handling null root object', () => {
+
+  it('Should not throw Error', () => {
+    var fn = function() {
+      return camelCaseKeys(null);
+    };
+    expect(fn).to.not.throw(Error);
+  });
+
+  it('Should return null', () => {
+    expect(camelCaseKeys(null)).to.be.null;
+  });
+
+});
+
+describe('Handling undefined root object', () => {
+
+  it('Should not throw Error', () => {
+    var fn = function() {
+      return camelCaseKeys(undefined);
+    };
+    expect(fn).to.not.throw(Error);
+  });
+
+  it('Should return undefined', () => {
+    expect(camelCaseKeys(undefined)).to.be.undefined;
+  });
+
+});
