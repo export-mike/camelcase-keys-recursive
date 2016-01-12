@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 
-const camelCaseKeys = require('../');
+const camelCaseKeys = require('../src');
 
 describe('Nested keys within arrays and objects are camelCased', () => {
 
