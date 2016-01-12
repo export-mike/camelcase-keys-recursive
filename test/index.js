@@ -82,7 +82,7 @@ describe('Nested keys within arrays and objects are camelCased', () => {
       created_at: '2015-09-24T13:44:41.553Z'
     };
 
-    expect(expected).deep.equals(camelCaseKeys(input));
+    expect(camelCaseKeys(input)).deep.equals(expected);
 
   });
 
@@ -133,7 +133,7 @@ describe('Nested keys within arrays and objects are camelCased', () => {
       }
     };
 
-    expect(expected).deep.equals(camelCaseKeys(input));
+    expect(camelCaseKeys(input)).deep.equals(expected);
 
 
   });
