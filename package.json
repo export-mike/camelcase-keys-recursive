@@ -10,9 +10,10 @@
   "scripts": {
     "compile": "babel --source-maps --out-dir lib/ src/",
     "lint": "eslint --ext .js --ext .jsx ./ && echo No linting errors.",
-    "test": "node_modules/.bin/mocha test/ --recursive --compilers js:babel/register",
+    "pretest": "npm run compile",
+    "test": "mocha test/ --recursive --compilers js:babel/register",
     "test:watch": "npm run test -- --watch",
-    "coverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel/register --colors --reporter dot test/",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel/register --colors --reporter dot test/",
     "prepublish": "npm run compile"
   },
   "keywords": [
