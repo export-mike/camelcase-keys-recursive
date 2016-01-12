@@ -169,3 +169,24 @@ describe('Handling undefined root object', () => {
   });
 
 });
+
+describe('Handling array root object', () => {
+
+  it('Should not throw Error', () => {
+    const fn = function testThrowError() {
+      return camelCaseKeys([]);
+    };
+    expect(fn).to.not.throw(Error);
+  });
+
+  it('Should return an array', () => {
+    expect(camelCaseKeys([])).to.be.instanceof(Array);
+  });
+
+  it('Should handle nested objects', () => {
+    const expected = [{test1: 123}];
+    const actual = camelCaseKeys([{'test-1': 123}]);
+    expect(camelCaseKeys(actual)).to.deep.equal(expected);
+  });
+
+});

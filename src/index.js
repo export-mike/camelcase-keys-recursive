@@ -6,7 +6,7 @@ const camelCase = (str) => str.replace(/[_.-](\w|$)/g, (_, x) => x.toUpperCase()
 
 function camelCaseRecursive(obj) {
 
-  return obj == null ? obj : mapObj(obj, (key, val) => {
+  const transform = obj == null ? obj : mapObj(obj, (key, val) => {
     const newArray = [];
 
     if (Array.isArray(val)) {
@@ -29,6 +29,9 @@ function camelCaseRecursive(obj) {
 
     return [camelCase(key), val];
   });
+
+  return (Array.isArray(obj) ? Object.values(transform) : transform);
+
 }
 
 export default camelCaseRecursive;
