@@ -4,6 +4,12 @@ const isObject = (v) => typeof(v) === 'object';
 
 const camelCase = (str) => str.replace(/[_.-](\w|$)/g, (_, x) => x.toUpperCase());
 
+function objectValues(obj) {
+  return Object.keys(obj).map(function(key) {
+    return obj[key];
+  });
+}
+
 function camelCaseRecursive(obj) {
 
   const transform = obj == null ? obj : mapObj(obj, (key, val) => {
@@ -30,7 +36,7 @@ function camelCaseRecursive(obj) {
     return [camelCase(key), val];
   });
 
-  return (Array.isArray(obj) ? Object.values(transform) : transform);
+  return (Array.isArray(obj) ? objectValues(transform) : transform);
 
 }
 
