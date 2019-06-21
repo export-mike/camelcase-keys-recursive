@@ -1,2 +1,6 @@
 src/
 test/
+.eslintrc
+.eslintignore
+.nvmrc
+.travis.yml
