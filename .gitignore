@@ -32,3 +32,5 @@ coverage/
 *.tpm
 .idea/
 lib/
+yarn.lock
+package-lock.json
