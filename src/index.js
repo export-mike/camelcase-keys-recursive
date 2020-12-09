@@ -2,7 +2,7 @@ import mapObj from 'map-obj';
 
 const isObject = (v) => typeof(v) === 'object';
 
-const camelCase = (str) => str.replace(/[_.-](\w|$)/g, (_, x) => x.toUpperCase());
+const camelCase = (str) => str.replace(/[ _.-](\w|$)/g, (_, x) => x.toUpperCase());
 
 function objectValues(obj) {
   return Object.keys(obj).map(function(key) {
