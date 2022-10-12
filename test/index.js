@@ -174,6 +174,76 @@ describe('Nested keys within arrays and objects are camelCased', () => {
 
 });
 
+describe('Circular references', () => {
+  it('Should handle objects with circular references', () => {
+    const parent = {
+      my_name: 'parent',
+    };
+    parent.child = parent;
+
+    const selfReferentialCamel = camelCaseKeys(parent);
+
+    expect(Object.keys(selfReferentialCamel)).deep.equals(['myName', 'child']);
+    expect(Object.keys(selfReferentialCamel.child)).deep.equals(['myName', 'child']);
+    expect(selfReferentialCamel).to.equal(selfReferentialCamel.child);
+  });
+
+  it('Should handle objects with circular references in their children', () => {
+    const parent = {
+      name: 'parent',
+    };
+    const child = {
+      name: 'child',
+      my_own_parent: parent,
+    }
+    parent.child = child;
+
+    const selfReferentialCamel = camelCaseKeys(parent);
+
+    expect(Object.keys(selfReferentialCamel)).deep.equals(['name', 'child']);
+    expect(Object.keys(selfReferentialCamel.child)).deep.equals(['name', 'myOwnParent']);
+    expect(selfReferentialCamel).to.equal(selfReferentialCamel.child.myOwnParent);
+  });
+
+  it('Should handle arrays with objects with circular references in their children', () => {
+    const parent = {
+      name: 'parent',
+    };
+    const child = {
+      name: 'child',
+      my_own_parent: parent,
+    }
+    parent.child = child;
+
+    const selfReferentialCamel = camelCaseKeys([parent]);
+
+    expect(selfReferentialCamel).to.have.lengthOf(1);
+    expect(Object.keys(selfReferentialCamel[0])).deep.equals(['name', 'child']);
+    expect(Object.keys(selfReferentialCamel[0].child)).deep.equals(['name', 'myOwnParent']);
+    expect(selfReferentialCamel[0]).to.equal(selfReferentialCamel[0].child.myOwnParent);
+  });
+
+  it('Should handle objects with circular references in arrays of their children', () => {
+    const parent = {
+      name: 'parent',
+    };
+    const child = {
+      name: 'child',
+      my_own_parent: parent,
+    }
+    parent.children = [child, child];
+
+    const selfReferentialCamel = camelCaseKeys(parent);
+
+    expect(Object.keys(selfReferentialCamel)).deep.equals(['name', 'children']);
+    expect(Object.keys(selfReferentialCamel.children)).to.have.lengthOf(2);
+    expect(Object.keys(selfReferentialCamel.children[0])).deep.equals(['name', 'myOwnParent']);
+    expect(Object.keys(selfReferentialCamel.children[1])).deep.equals(['name', 'myOwnParent']);
+    expect(selfReferentialCamel).to.equal(selfReferentialCamel.children[0].myOwnParent);
+    expect(selfReferentialCamel).to.equal(selfReferentialCamel.children[1].myOwnParent);
+  });
+});
+
 describe('Handling null root object', () => {
 
   it('Should not throw Error', () => {
