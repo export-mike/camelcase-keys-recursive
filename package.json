@@ -8,13 +8,13 @@
   },
   "main": "lib/index.js",
   "scripts": {
-    "compile": "babel --source-maps --out-dir lib/ src/",
+    "build": "babel --source-maps --out-dir lib/ src/",
     "lint": "eslint --ext .js --ext .jsx ./ && echo No linting errors.",
-    "pretest": "npm run compile",
+    "pretest": "npm run build",
     "test": "mocha test/ --recursive --compilers js:babel/register",
     "test:watch": "npm run test -- --watch",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --compilers js:babel/register --colors --reporter dot test/",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "camelcase",
