@@ -10,7 +10,22 @@ function objectValues(obj) {
   });
 }
 
-function camelCaseRecursive(obj) {
+function camelCaseRecursive(obj, cache) {
+  if (!cache) {
+    cache = new WeakMap();
+  }
+  let res;
+  if (obj !== null && isObject(obj)) {
+    if (cache.has(obj)) {
+      return cache.get(obj);
+    }
+    if (Array.isArray(obj)) {
+      res = [];
+    } else {
+      res = {};
+    }
+    cache.set(obj, res);
+  }
 
   const transform = obj == null ? obj : mapObj(obj, (key, val) => {
     const newArray = [];
@@ -18,7 +33,7 @@ function camelCaseRecursive(obj) {
     if (Array.isArray(val)) {
       val.forEach((value) => {
         if (isObject(value) && !Array.isArray(value)) {
-          newArray.push(camelCaseRecursive(value));
+          newArray.push(camelCaseRecursive(value, cache));
         } else {
           newArray.push(value);
         }
@@ -30,13 +45,24 @@ function camelCaseRecursive(obj) {
     } else if (val instanceof Date) {
       return [camelCase(key), val];
     } else if (isObject(val)) {
-      return [camelCase(key), camelCaseRecursive(val)];
+      return [camelCase(key), camelCaseRecursive(val, cache)];
     }
 
     return [camelCase(key), val];
   });
 
-  return (Array.isArray(obj) ? objectValues(transform) : transform);
+  if (obj !== null && isObject(obj)) {
+    // mutate the entry in the cache so that self-references still line up
+    if (Array.isArray(obj)) {
+      objectValues(transform).forEach(entry => res.push(entry));
+    } else {
+      Object.entries(transform).forEach(([k, v]) => res[k] = v);
+    }
+
+    return res;
+  }
+
+  return transform;
 
 }
 
